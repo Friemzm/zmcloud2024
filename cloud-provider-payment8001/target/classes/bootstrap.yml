@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: cloud-payment-service
+    ####Spring Cloud Consul for Service Discovery
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+      config:
+        profile-separator: '-' #官网上默认的是逗号，这不符合我们的习惯，我们使用-号来做分割
+        format: YAML
+
